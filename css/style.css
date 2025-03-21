@@ -686,7 +686,7 @@ a:visited {
 .footer {
 	color: white;
 	position: relative;
-	background-image: url(../img/CCBR2024.png);
+	background-image: url(../img/CCBR2025.png);
 	background-color: #0F66B1;
 	background-repeat: no-repeat;
 	background-size: 75%;
@@ -1187,4 +1187,10 @@ li span{
 .prcv4tvw3rt {
 	cursor: pointer;
 	position: relative;
+}
+
+@media (min-width: 1400px) {
+    .container,.container-lg,.container-md,.container-sm,.container-xl,.container-xxl {
+        max-width:1320px
+    }
 }
