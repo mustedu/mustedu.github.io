@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>大会日程-中国生物特征识别大会</title>
+		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+        <META HTTP-EQUIV="Expires" CONTENT="0">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="keywords" content="中国生物特征识别大会,CCBR,生物识别,模式识别,图像处理,人工智能,AI,前沿,安全领域,论文,科研">
+		<meta name="description" content="本届大会将汇集生物识别各界领军者，以前瞻化、产业化视角促进学术与产业的交流，洞察生物特征识别在各个领域中的深度应用，解析并分享我国生物特征识别研究的最新理论和技术成果。">
+		<meta property="og:image" content="http://www.ccbr99.cn/img/logo/logo.png">
+		<link rel="shortcut icon" href="img/ico.png">
+		
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.css?v=2021415" />
+		<script src="js/jquery-3.6.0.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+		<header class="n fixed-top"></header>
+		<div class="b_h">
+			<div>PROGRAM</div>
+		</div>
+		<main class="container">
+			<div class="row">
+				<div class="cmit zw d-xl-none d-lg-none w-100">
+					<div class="nav" id="v-zw-tab" role="tablist" aria-orientation="vertical" style="    font-size: 14px;">
+						<a class="list-group-item list-group-item-action active border-left-0" id="v-cfp-tab" data-toggle="pill" href="#c1" role="tab" aria-controls="v-zw-cfp" aria-selected="true">简要日程</a>
+						<a class="list-group-item list-group-item-action border-right-0" id="v-cfp-tab" data-toggle="pill" href="#c2" role="tab" aria-controls="v-zw-cfp" aria-selected="false">详细日程</a>
+					</div>
+				</div>
+
+				<div class="i_m_left text-justify introduction col-lg-8">
+					<div class="tab-content" id="v-zw-tabContent">
+													
+						<div class="tab-pane fade show active mt-4" id="c1" role="tabpanel" aria-labelledby="v-cfp-tab">
+							<div class="text-center" id="l1">
+							<h5 class="title-wrap mb-3">大会日程—简版</h5>
+						</div>
+						<div style="height: 100vh; position: relative;">
+							
+    <iframe src="program_1.html" 
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; border: none;"
+            frameborder="0"></iframe>
+</div>
+							
+						</div>
+
+						<div class="tab-pane fade mt-4" id="c2" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+							<div class="text-center" id="l1">
+							<h5 class="title-wrap mb-3">大会日程—详版</h5>
+						</div>
+								<div style="height: 100vh; position: relative;">
+    <iframe src="program_2.html" 
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; border: none;"
+            frameborder="0"></iframe>
+</div>
+            
+						</div>
+						
+						
+					</div>
+				</div>
+
+				<!--
+                	描述：右侧
+                -->
+				<div class="m_right col-lg-4">
+					<div class="sticky-top r_lm mt-4">
+						<div class="zw d-none d-lg-block">
+							<div class="tg text-center">大会日程</div>
+							<div class="cmit">
+								<div class="nav" id="v-zw-tab" role="tablist" aria-orientation="vertical">
+									<a class="list-group-item list-group-item-action active w-100" id="v-cfp-tab" data-toggle="pill" href="#c1" role="tab" aria-controls="v-zw-cfp" aria-selected="true">简要日程</a>
+									<a class="list-group-item list-group-item-action w-100" id="v-cfp-tab" data-toggle="pill" href="#c2" role="tab" aria-controls="v-zw-cfp" aria-selected="false">详细日程</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="mt-4 zyjc"></div>
+						<div class="mt-4 zzqy"></div>
+
+					</div>
+				</div>
+
+			</div>
+		</main>
+
+		<footer class="footer container-fluid mt-4 p-4"></footer>
+
+		<script>
+			function dh() {
+				var str = location.href; //取得整个地址栏
+				var num = str.indexOf("?")
+				str = str.substr(num + 1); //取得所有参数   stringvar.substr(start [, length ]
+				var arr = str.split("&"); //各个参数放到数组里
+
+				for(var i = 0; i < arr.length; i++) {
+					num = arr[i].indexOf("=");
+					if(num > 0) {
+						name = arr[i].substring(0, num);
+						value = arr[i].substr(num + 1);
+						if(name == 'c') {
+							$('#v-zw-tab a[href="#' + value + '"]').tab('show')
+						}
+						this[name] = value;
+					}
+				}
+			}
+
+			function urt() {
+				$(".list-group-item").click(function() {
+					var ur = location.protocol + "//" + location.host + location.pathname + "?c=" + $(this).attr("href").substr(1);
+					window.history.pushState(null, null, ur);
+				})
+			}
+
+			$(function() {
+				dh();
+				urt();
+				
+				var html = $.ajax({url:"code/nav.html" , async:false});
+				$(".n").html(html.responseText);
+				var html = $.ajax({url:"code/zyjc.html" , async:false});
+				$(".zyjc").html(html.responseText);
+				var html = $.ajax({url:"code/zzqy.html" , async:false});
+				$(".zzqy").html(html.responseText);
+				var html = $.ajax({url:"code/footer.html" , async:false});
+				$(".footer").html(html.responseText);
+				
+			})
+			
+			
+				//处理图片403
+	
+$(document).ready(function() {
+  $('.wxcss img').each(function() {
+    var $img = $(this);
+    var originalSrc = $img.attr('src');
+
+    // 仅处理非本地资源、非以根路径开头的相对URL和尚未经过images.weserv.nl处理的链接
+    if (
+      !originalSrc.startsWith('data:') &&
+      !originalSrc.startsWith('/') &&
+      !originalSrc.includes('images.weserv.nl')
+    ) {
+      var processedSrc = 'https://images.weserv.nl/?url=' + encodeURIComponent(originalSrc);
+      $img.attr('src', processedSrc);
+    }
+  });
+});
+$(document).ready(function() {
+  var styleTag = $('<style></style>').appendTo('head');
+
+  $('[style*="background-image"]').each(function() {
+    var $element = $(this);
+    var originalStyle = $element.attr('style');
+    var bgImageRegex = /background-image:\s*url\((['"]?)(.+?)\1\)/i;
+    var match = bgImageRegex.exec(originalStyle);
+
+    if (match) {
+      var originalUrl = match[2];
+      var processedUrl = 'url("https://images.weserv.nl/?url=' + encodeURIComponent(originalUrl) + '")';
+
+      var newStyle = originalStyle.replace(bgImageRegex, 'background-image: ' + processedUrl);
+      $element.attr('style', newStyle);
+
+      // 将新规则添加到动态样式表中，以备后续可能的样式重置
+      var selector = '#' + $element.attr('id') || '.' + $element.attr('class').replace(/\s+/g, '.');
+      styleTag.append(`${selector} { ${newStyle} }\n`);
+    }
+  });
+});
+			
+			
+			
+		</script>
+	</body>
+
+</html>

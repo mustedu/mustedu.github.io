@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>专题报告-中国生物特征识别大会</title>
+		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+        <META HTTP-EQUIV="Expires" CONTENT="0">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="keywords" content="中国生物特征识别大会,CCBR,生物识别,模式识别,图像处理,人工智能,AI,前沿,安全领域,论文,科研">
+		<meta name="description" content="本届大会将汇集生物识别各界领军者，以前瞻化、产业化视角促进学术与产业的交流，洞察生物特征识别在各个领域中的深度应用，解析并分享我国生物特征识别研究的最新理论和技术成果。">
+		<meta property="og:image" content="http://www.ccbr99.cn/img/logo/logo.png">
+		<link rel="shortcut icon" href="img/ico.png">
+		
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="js/jquery-3.6.0.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+		<header class="n fixed-top"></header>
+		<div class="b_h">
+			<div>FORUM</div>
+		</div>
+
+		<main class="container">
+			<div class="row">
+				<div class="i_m_left text-justify introduction col-lg-8">
+					<div class="tab-content" id="v-zw-tabContent">
+					    
+						<div class="tab-pane fade show active mt-4" id="cz" role="tabpanel" aria-labelledby="v-cfp-tab">
+														<p>信息更新中...</p>
+						</div>
+					</div>
+				</div>
+
+				<!--
+                	描述：右侧
+                -->
+				<div class="m_right col-lg-4">
+					<div class="sticky-top r_lm mt-4">
+						<div class="mt-4 zyjc"></div>
+						<div class="mt-4 zzqy"></div>
+
+					</div>
+				</div>
+
+			</div>
+		</main>
+
+		<footer class="footer container-fluid mt-4 p-4"></footer>
+
+		<script>
+			function dh() {
+				var str = location.href; //取得整个地址栏
+				var num = str.indexOf("?")
+				str = str.substr(num + 1); //取得所有参数   stringvar.substr(start [, length ]
+				var arr = str.split("&"); //各个参数放到数组里
+
+				for(var i = 0; i < arr.length; i++) {
+					num = arr[i].indexOf("=");
+					if(num > 0) {
+						name = arr[i].substring(0, num);
+						value = arr[i].substr(num + 1);
+						if(name == 'c') {
+							$('#v-zw-tab a[href="#' + value + '"]').tab('show')
+						}
+						this[name] = value;
+					}
+				}
+			}
+
+			function urt() {
+				$(".list-group-item").click(function() {
+					var ur = location.protocol + "//" + location.host + location.pathname + "?c=" + $(this).attr("href").substr(1);
+					window.history.pushState(null, null, ur);
+				})
+			}
+
+			$(function() {
+				dh();
+				urt();
+				var html = $.ajax({url:"code/nav.html" , async:false});
+				$(".n").html(html.responseText);
+				var html = $.ajax({url:"code/zyjc.html" , async:false});
+				$(".zyjc").html(html.responseText);
+				var html = $.ajax({url:"code/zzqy.html" , async:false});
+				$(".zzqy").html(html.responseText);
+				var html = $.ajax({url:"code/footer.html" , async:false});
+				$(".footer").html(html.responseText);
+			})
+		</script>
+	</body>
+
+</html>
