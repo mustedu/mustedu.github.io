@@ -84,6 +84,12 @@
 							
 							<div>
 								<p><a href="file/CCBR2025-PPT模板16比9.pptx">CCBR2025-PPT模板16比9.pptx</a></p>
+								
+									<iframe src="OralSession.html" frameborder="0" id="external-frame" width="100%"></iframe>
+
+								
+								
+								
 							</div>
 
 						</div>
@@ -167,6 +173,21 @@
 					window.history.pushState(null, null, ur);
 				})
 			}
+
+
+function setIframeHeight(iframe) {
+			if (iframe) {
+				var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+				if (iframeWin.document.body) {
+					iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+				}
+			}
+		};
+
+		window.onload = function () {
+			setIframeHeight(document.getElementById('external-frame'));
+		};
+
 
 			$(function() {
 				dh();
