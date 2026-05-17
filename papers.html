@@ -30,11 +30,10 @@
 				font-size: 10.5pt;
 			}
 			
-			
-			tr
-	{mso-height-source:auto;
-	mso-ruby-visibility:none;}
-			
+			tr {
+				mso-height-source: auto;
+				mso-ruby-visibility: none;
+			}
 		</style>
 
 	</head>
@@ -64,16 +63,14 @@
 							<div class="text-center" id="l0">
 								<h5 class="title-wrap mb-3">录用论文名单</h5>
 							</div>
-							
+
 							<div>
-								
+
 								<!--头部<table border="0" cellpadding="0" cellspacing="0" class="table table-hover table-striped table-bordered table-sm zlwsl text-left">-->
 
-  内容更新中...
-								
+								内容更新中...
+
 							</div>
-							
-							
 
 						</div>
 
@@ -81,15 +78,14 @@
 							<div class="text-center" id="l1">
 								<h5 class="title-wrap mb-3">口头报告</h5>
 							</div>
-							
-							<div>
-								<p><a href="file/CCBR2025-PPT模板16比9.pptx">CCBR2025-PPT模板16比9.pptx</a></p>
-								
-									<iframe src="OralSession.html" frameborder="0" id="external-frame" width="100%"></iframe>
 
-								
-								
-								
+							<div>
+								<p>
+									<a href="file/CCBR2025-PPT模板16比9.pptx">CCBR2025-PPT模板16比9.pptx</a>
+								</p>
+
+								<iframe src="OralSession.html" frameborder="0" id="external-frame" width="100%"></iframe>
+
 							</div>
 
 						</div>
@@ -98,22 +94,73 @@
 							<div class="text-center" id="l2">
 								<h5 class="title-wrap mb-3">墙报展示</h5>
 							</div>
-							
+
 							<div>
-								<p><a href="file/CCBR墙报模板-80x140cm.pptx">CCBR墙报模板-80x140cm.pptx</a></p>
+								<p>
+									<a href="file/CCBR墙报模板-80x140cm.pptx">CCBR墙报模板-80x140cm.pptx</a>
+								</p>
 							</div>
-							
+
 						</div>
-						
+
 						<div class="tab-pane fade mt-4" id="l3" role="tabpanel" aria-labelledby="v-pills-profile-tab">
 							<div class="text-center" id="l3">
 								<h5 class="title-wrap mb-3">CCBR2025获奖论文</h5>
 							</div>
-							
+
 							<div>
-								内容更新中...
+								<div>
+									<p style="font-weight: bold;">最佳论文评选委员会</p>
+									<ul style="    list-style-type: disc;">
+										<li>于仕琪，南方科技大学，中国</li>
+										<li>Mark S. Nixon, University of Southampton, UK</li>
+										<li>Massimo Tistarelli, University of Sassari, Italy</li>
+										<li>Manuel J Marin-Jimenez, University of Cordoba, Spain</li>
+										<li>Matteo Ferrara, University of Bologna, Italy</li>
+										<li>Vitomir Struc, University of Ljubljana, Slovenia</li>
+									</ul>
+									
+									<p>最佳论文奖金由Springer出版社提供。	</p>
+									<p>The Best Paper Awards are sponsored by Springer.</p>
+
+									<table border="0" cellpadding="0" cellspacing="0" class="mt-4 table table-hover table-striped table-bordered table-sm zlwsl text-left">
+
+										<tbody>
+											<tr style="    font-weight: bold;">
+												<td>获奖名称</td>
+												<td>论文序号</td>
+												<td>论文标题</td>
+												<td>作者信息</td>
+											</tr>
+											<tr>
+												<td>最佳论文</td>
+												<td>48</td>
+												<td>Temporally-Aware Multi-task Representation Learning for Compositional Action Recognition</td>
+												<td>Peng Huang, Wenxuan Ge, He Yan, Henghao Zhao, and Xiangbo Shu</td>
+											</tr>
+											<tr>
+												<td>最佳学生论文</td>
+												<td>82</td>
+												<td>Bridging Synthetic and Real Domains for Face Presentation Attack Detection via Entropy-Regularized Alignment</td>
+												<td>Lin Li, Wenjun Wang, and Meiling Fang</td>
+											</tr>
+											<tr>
+												<td rowspan="3">最佳论文提名奖</td>
+												<td>41</td>
+												<td>Progressive Adversarial Learning for Multi-Modality Biometric Recognition with Missing Modality</td>
+												<td>Hai Yuan, Xiao Yang, Jun Wang, , Zhengwen Shen, and Zaiyu Pan</td>
+											</tr>
+											<tr>
+												<td>52</td>
+												<td>Learning Without Borders: A Domain-Adapted and Federated Approach to Palmprint Recognition</td>
+												<td>Congcong Jia, Shiyu Gu, Hanyu Wang, Qingguo Meng, Zhe Jin, Lianqiang Yang, Xingbo Dong, and Junduan Huang</td>
+											</tr>
+										</tbody>
+									</table>
+
+								</div>
 							</div>
-							
+
 						</div>
 
 					</div>
@@ -174,20 +221,18 @@
 				})
 			}
 
-
-function setIframeHeight(iframe) {
-			if (iframe) {
-				var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
-				if (iframeWin.document.body) {
-					iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+			function setIframeHeight(iframe) {
+				if(iframe) {
+					var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+					if(iframeWin.document.body) {
+						iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+					}
 				}
-			}
-		};
+			};
 
-		window.onload = function () {
-			setIframeHeight(document.getElementById('external-frame'));
-		};
-
+			window.onload = function() {
+				setIframeHeight(document.getElementById('external-frame'));
+			};
 
 			$(function() {
 				dh();
